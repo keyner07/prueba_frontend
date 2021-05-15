@@ -1,5 +1,5 @@
 const fromApiResponseToMovies = apiResponse => {
-    const {results= []} = apiResponse;
+    const {results} = apiResponse;
     if (Array.isArray(results)) {
       const movies = results.map(movie => {
         const {title, original_language, release_date, poster_path, vote_average, id} = movie;

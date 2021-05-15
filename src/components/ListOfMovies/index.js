@@ -19,6 +19,7 @@ export default function ListOfMovies({ movies, title }){
                     movies.map(movie => (
                         <Col className="gutter-row" xs={20} sm={16} md={12} lg={8} xl={4} offset={1} key={movie.id}>
                             <MovieItem
+                                id={movie.id}
                                 name={movie.title}
                                 date={movie.release_date}
                                 vote={movie.vote_average}
