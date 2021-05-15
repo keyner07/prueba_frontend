@@ -1,0 +1,13 @@
+
+.title{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+    font-family: 'Asap', sans-serif;
+    font-size: 3.5em;
+    color: white;
+  }
+
+.ListOfMovies {
+  margin: 10px;
+}
