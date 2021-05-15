@@ -9,9 +9,7 @@ export default function LayoutComponent({ children }) {
     return (
         <>
             <HeaderComponent />
-                <div className="content">
-                    {children}
-                </div>
+                {children}
             <FooterComponent />
         </>
     )
