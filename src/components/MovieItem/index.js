@@ -5,16 +5,14 @@ import './styles.css';
 
 export default function MovieItem({ name, date, vote, image}) {
     return (
-        <div>
+        <>
             <Card className="Movie" bodyStyle={{ padding: 0 }}>
-                <div className='custom-image'>
-                    <img loading="lazy" alt={name} src={image} />
-                </div>
+                    <img loading="lazy" alt={name} src={`https://image.tmdb.org/t/p/w500${image}`} />
                 <div className='custom-card'>
                     <h3>{name}</h3>
                     <p>{`Date: ${date} || Votes: ${vote}`}</p>
                 </div>
             </Card>
-        </div>
+        </>
     )
 }
