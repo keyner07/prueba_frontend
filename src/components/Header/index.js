@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { HomeOutlined, HeartOutlined, RocketOutlined } from '@ant-design/icons';
 import { Menu } from 'antd'
 
@@ -7,19 +8,22 @@ export default function Header() {
         <>
             <Menu mode='horizontal'>
                 <Menu.Item >
-                    <h2 >
-                    <HomeOutlined /> Home
-                    </h2>
+                    <Link to='/' >
+                        <HomeOutlined />
+                        Home
+                    </Link>
                 </Menu.Item>
                 <Menu.Item>
-                    <h2>
-                    <HeartOutlined /> Popular
-                    </h2>
+                    <Link to='/popular'>
+                        <HeartOutlined />
+                        Popular
+                    </Link>
                 </Menu.Item>
                 <Menu.Item>
-                    <h2>
-                    <RocketOutlined /> Now Playing
-                    </h2>
+                    <Link to='/now-playing'>
+                        <RocketOutlined />
+                        Now Playing
+                    </Link>
                 </Menu.Item>
             </Menu>
         </>
