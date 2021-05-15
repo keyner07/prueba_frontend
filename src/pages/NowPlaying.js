@@ -4,6 +4,7 @@ import Layout from 'components/Layout';
 import ListOfMovies from 'components/ListOfMovies';
 
 import getNowPlayingMovies from 'services/getNowPlaying';
+import compareMovies from 'utils/compareMovies';
 
 export default function Home() {
     const [loading, setLoading] = useState(false);
@@ -14,7 +15,8 @@ export default function Home() {
 
         getNowPlayingMovies()
             .then(movies => {
-                setMoviesNow(movies);
+                const moviesSort = movies.sort(compareMovies)
+                setMoviesNow(moviesSort);
                 setLoading(false);
             })
             .catch(() => alert('Ocurrio algo'));
