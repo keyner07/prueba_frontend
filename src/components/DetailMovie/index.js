@@ -37,7 +37,7 @@ export default function DetailMovie({ title, release_date, vote_average, poster_
                             <strong>Votacion</strong>
                         </span>
                         <Rate allowHalf defaultValue={stars} onChange={handleVoteChange} />
-                        <Button>Enviar</Button>
+                        <Button type="primary">Enviar</Button>
                     </div>
                 </Col>
             </Row> 
