@@ -19,10 +19,10 @@ export default function ListOfMovies({ movies, title }){
                     movies.map(movie => (
                         <Col className="gutter-row" xs={20} sm={16} md={12} lg={8} xl={4} offset={1} key={movie.id}>
                             <MovieItem
-                                name={movie.name}
-                                date={movie.date}
-                                vote={movie.vote}
-                                image={movie.image}
+                                name={movie.title}
+                                date={movie.release_date}
+                                vote={movie.vote_average}
+                                image={movie.poster_path}
                                 />
                         </Col>
                     ))
