@@ -11,9 +11,7 @@ export default function Home() {
     return (
         <>
             <Layout>
-                <div style={{ margin: "auto", minHeight: "100vh"}}>
-                    <ListOfMovies movies={favs} title="Favourites movies" />
-                </div>
+                <ListOfMovies movies={favs} title="Favourites movies" />
             </Layout>
         </>
     )

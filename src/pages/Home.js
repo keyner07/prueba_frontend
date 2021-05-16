@@ -3,7 +3,7 @@ import React, { useEffect, useState} from 'react';
 import Layout from 'components/Layout';
 import ListOfMovies from 'components/ListOfMovies';
 
-import getTopRatedMovies from 'services/getRatedMovies';
+import getTopRatedMovies from 'services/getTopMovies';
 
 export default function Home() {
     const [loading, setLoading] = useState(false);
