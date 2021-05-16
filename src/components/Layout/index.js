@@ -9,7 +9,9 @@ export default function LayoutComponent({ children }) {
     return (
         <>
             <HeaderComponent />
-                {children}
+                <div style={{ margin: "auto", minHeight: "100vh"}}>  
+                    {children}
+                </div>
             <FooterComponent />
         </>
     )
