@@ -1,6 +1,6 @@
 import React from "react";
 import { Button } from 'antd';
-import { HeartOutlined, CloseOutlined } from '@ant-design/icons';
+import { StarOutlined, CloseOutlined } from '@ant-design/icons';
 
 import useUser from "hooks/useUser";
 
@@ -25,7 +25,7 @@ export default function Fav({ name, date, vote, image, id}) {
           ?
           <Button type="primary" onClick={deleteClick} shape="circle" icon={<CloseOutlined />} danger/>
           :
-          <Button type="primary" onClick={handleClick} shape="circle" icon={<HeartOutlined />}/>
+          <Button type="primary" onClick={handleClick} shape="circle" icon={<StarOutlined />}/>
       }
     </>
   );
