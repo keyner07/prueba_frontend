@@ -4,7 +4,6 @@ export default async function createGuestSession() {
     return fetch(`${API_URL}/authentication/guest_session/new?api_key=${API_KEY}`)
     .then(res => res.json())
     .then(res => {
-        console.log(res)
         const { guest_session_id } = res;
         return guest_session_id;
     })

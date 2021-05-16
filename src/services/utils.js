@@ -10,4 +10,4 @@ const fromApiResponseToMovies = apiResponse => {
     return []
   }
 
-module.exports = { fromApiResponseToMovies }
+export { fromApiResponseToMovies }
