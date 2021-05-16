@@ -1,5 +1,6 @@
 import React, { useEffect, useState} from 'react';
 import { useParams } from 'react-router-dom';
+import { Spin } from 'antd';
 import Layout from 'components/Layout';
 import Detail from 'components/DetailMovie';
 
@@ -21,23 +22,26 @@ export default function DetailMovie() {
             .catch(() => alert('Ocurrio algo'));
     }, [id])
 
-    if(loading) {
-        return (
-            <h1>Cargando...</h1>
-        )
-    }
     return (
         <>
             <Layout>
-                <Detail
-                    id={movie.id}
-                    title={movie.title}
-                    release_date={movie.date}
-                    vote_average={movie.vote/2}
-                    poster_path={movie.url}
-                    description={movie.description}
-                    genres={movie.genres}
-                />
+            {
+                    loading
+                    ?
+                    <div className="container">
+                        <Spin size="large" />
+                    </div>
+                    :
+                    <Detail
+                        id={movie.id}
+                        title={movie.title}
+                        release_date={movie.date}
+                        vote_average={movie.vote/2}
+                        poster_path={movie.url}
+                        description={movie.description}
+                        genres={movie.genres}
+                    />
+            }
             </Layout>
         </>
     )

@@ -1,4 +1,5 @@
 import React, { useEffect, useState} from 'react';
+import { Spin } from 'antd';
 
 import Layout from 'components/Layout';
 import ListOfMovies from 'components/ListOfMovies';
@@ -22,18 +23,18 @@ export default function Home() {
             .catch(() => alert('Ocurrio algo'));
     }, [])
 
-    if(loading) {
-        return (
-            <h1>Cargando...</h1>
-        )
-    }
-
     return (
         <>
             <Layout>
-                <div style={{ margin: "auto"}}>
+            {
+                    loading
+                    ?
+                    <div className="container">
+                        <Spin size="large" />
+                    </div>
+                    :
                     <ListOfMovies movies={moviesNow} title="Movies Now Playing" />
-                </div>
+            }
             </Layout>
         </>
     )

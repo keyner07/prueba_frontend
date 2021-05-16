@@ -16,3 +16,12 @@ body {
   font-size: calc(10px + 2vmin);
   color: white;
 }
+
+.container {
+  margin: 20px 0;
+  margin-bottom: 20px;
+  padding: 30px 50px;
+  text-align: center;
+  /* background: rgba(0, 0, 0, 0.05); */
+  border-radius: 4px;
+}

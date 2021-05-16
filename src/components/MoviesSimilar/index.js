@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Button } from 'antd';
+import { Button, Spin } from 'antd';
 
 import getSimilarMovies from 'services/getMoviesSimilar';
 import ListOfMovies from 'components/ListOfMovies';
@@ -15,7 +15,7 @@ export default function MoviesSimilar({ id }) {
 
     useEffect(() => {
         setLoading(true);
-
+        
         getSimilarMovies({ id })
             .then(movies => {
                 setMovies(movies);
@@ -26,16 +26,10 @@ export default function MoviesSimilar({ id }) {
 
     const label = moreMovies ? 'Less movies' : 'More movies';
 
-    if(loading) {
-        return (
-            <h1>Cargando...</h1>
-        )
-    }
-
     return (
         <>
             {
-                movies.length > 0
+                movies.length > 0 || loading
                 ?
                 <div >
                 {
@@ -47,7 +41,9 @@ export default function MoviesSimilar({ id }) {
                 }
                 </div>
                 :
-                null
+                <div className="container">
+                    <Spin size="large" />
+                </div>
             }
         </>
     )
