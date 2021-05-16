@@ -1,5 +1,5 @@
 import React, { useState} from 'react';
-import { Rate, Button } from 'antd';
+import { Rate, Button, Space } from 'antd';
 
 import rateMovie from 'services/rateMovie';
 import useUser from 'hooks/useUser';
@@ -18,7 +18,7 @@ export default function RateMovie({ id}) {
         rateMovie({ id, sessionId, value: stars })
             .then(() => {
                 setDisabledButton(false)
-                setStars(null)
+                setStars(0)
             });
     }
 
@@ -34,8 +34,10 @@ export default function RateMovie({ id}) {
             <span className='genreTitle'>
                 <strong>Votacion</strong>
             </span>
-            <Rate allowHalf defaultValue={stars} onChange={handleVoteChange} />
-            <Button type="primary" disabled={disableButton} onClick={handleSubmit}>Enviar</Button>
+            <Space>
+                <Rate allowHalf value={stars} onChange={handleVoteChange} />
+                <Button type="primary" disabled={disableButton} onClick={handleSubmit}>Enviar</Button>
+            </Space>
         </div>
     )
 }
