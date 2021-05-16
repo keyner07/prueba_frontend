@@ -7,14 +7,14 @@ const Context = React.createContext({})
 export function UserContextProvider ({children}) {
   const [favs, setFavs] = useState([])
   const [sessionId, setSessionId] = useState(
-    () => window.sessionStorage.getItem('sessionId')
+    () => window.localStorage.getItem('sessionId')
   )
 
   useEffect(() => {
     if (!sessionId) {
         createGuestSession().then((sessionId) => {
             setSessionId(sessionId)
-            window.sessionStorage.setItem("sessionId", sessionId);
+            window.localStorage.setItem("sessionId", sessionId);
         });
     }
   }, [sessionId])
