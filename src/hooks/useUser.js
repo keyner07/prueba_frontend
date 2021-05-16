@@ -5,11 +5,21 @@ export default function useUser() {
   const { favs, sessionId, setFavs, setSessionId } = useContext(Context);
 
   const addFav = useCallback(
-    (content) => {
-      setFavs(prevFavs => prevFavs.concat(content))
+    (newFav) => {
+      setFavs(prevFavs => prevFavs.concat(newFav))
     },
     [setFavs]
   );
+
+  const deleteFav = useCallback(
+    (id) => {
+      setFavs(prevFavs => {
+        const movies = prevFavs.filter(movie => movie.id !== id);
+        return movies;
+      })
+    },
+    [setFavs]
+  )
 
   const logout = useCallback(() => {
     window.sessionStorage.removeItem("sessionId");
@@ -20,6 +30,7 @@ export default function useUser() {
     addFav,
     favs,
     logout,
-    sessionId
+    sessionId,
+    deleteFav
   };
 }
