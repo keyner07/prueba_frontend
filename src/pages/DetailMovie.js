@@ -8,11 +8,13 @@ import Layout from 'components/Layout';
 import Detail from 'components/DetailMovie';
 
 import getMovieById from 'services/getMovieById';
+import getActors from 'services/getActorsById';
 
 export default function DetailMovie() {
     const { id } = useParams();
     const [loading, setLoading] = useState(false);
     const [movie, setMovie] = useState([]);
+    const [actors, setActors] = useState([]);
 
     const title = `${movie.title} || MoviesApp`
 
@@ -22,6 +24,17 @@ export default function DetailMovie() {
         getMovieById({ id})
             .then(movie => {
                 setMovie(movie);
+                setLoading(false);
+            })
+            .catch(() => alert('Ocurrio algo'));
+    }, [id])
+
+    useEffect(() => {
+        setLoading(true);
+
+        getActors({ id})
+            .then(actors => {
+                setActors(actors)
                 setLoading(false);
             })
             .catch(() => alert('Ocurrio algo'));
@@ -49,6 +62,7 @@ export default function DetailMovie() {
                         poster_path={movie.url}
                         description={movie.description}
                         genres={movie.genres}
+                        actors={actors}
                     />
             }
             </Layout>

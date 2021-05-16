@@ -6,7 +6,7 @@ import randomColor from 'utils/randomColors';
 import RateMovie from 'components/RateMovie';
 import MoviesSimilar from 'components/MoviesSimilar';
 
-export default function DetailMovie({ title, release_date, vote_average, poster_path, description, genres=[], id}) {
+export default function DetailMovie({ title, release_date, vote_average, poster_path, description, genres=[], id, actors=[]}) {
     
 
     return (
@@ -29,6 +29,13 @@ export default function DetailMovie({ title, release_date, vote_average, poster_
                         {genres.map(genre => <Tag color={randomColor()} key={genre.id}>{genre.name}</Tag>)}
                     </div>
                     <Rate className='rate' disabled defaultValue={vote_average} />
+                    <hr />
+                    <div className='genres'>
+                        <span className='genreTitle'>
+                        <strong>Cast: </strong>
+                        </span>
+                        {actors.map(actor => <Tag color={randomColor()} key={actor.id}>{actor.name} as {actor.character}</Tag>)}
+                    </div>
                     <hr />
                     <RateMovie id={id} />
                     <hr />
