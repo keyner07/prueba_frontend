@@ -34,7 +34,10 @@ export default function MoviesSimilar({ id }) {
 
     return (
         <>
-            <div >
+            {
+                movies.length > 0
+                ?
+                <div >
                 {
                     moreMovies
                     ?
@@ -42,7 +45,10 @@ export default function MoviesSimilar({ id }) {
                     :
                     <ListOfMovies movies={movies.slice(0,8)} button={<Button type="primary" onClick={handleMoreMovies} size="large" >{ label }</Button>} />
                 }
-            </div>
+                </div>
+                :
+                null
+            }
         </>
     )
 }
