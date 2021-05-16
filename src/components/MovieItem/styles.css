@@ -13,7 +13,7 @@ img {
 
   .Movie {
     width: 240px;
-    margin: 10px auto;
+    /* margin: 10px auto; */
     max-height: 500px;
   }
   .Movie-buttons {

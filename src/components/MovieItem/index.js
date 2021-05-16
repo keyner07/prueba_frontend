@@ -6,7 +6,7 @@ import Fav from 'components/Fav';
 
 import './styles.css';
 
-export default function MovieItem({ name, date, vote, image, id}) {
+export default function MovieItem({ name, date, vote, image, id, rating}) {
     return (
         <>
             <Card className="Movie" bodyStyle={{ padding: 0 }}>
@@ -23,7 +23,7 @@ export default function MovieItem({ name, date, vote, image, id}) {
                     <img loading="lazy" alt={name} src={`https://image.tmdb.org/t/p/w500${image}`} />
                     <div className='custom-card'>
                         <h3>{name}</h3>
-                        <p>{`Date: ${date} || Votes: ${vote}`}</p>
+                        <p>{`Date: ${date} || Votes: ${vote} ${rating ? `Rate: ${rating}` : null }`}</p>
                     </div>
                 </Link>
             </Card>
