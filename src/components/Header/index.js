@@ -25,6 +25,12 @@ export default function Header() {
                         Now Playing
                     </Link>
                 </Menu.Item>
+                <Menu.Item>
+                    <Link to='/rate-movies'>
+                        <RocketOutlined />
+                        Rated movies
+                    </Link>
+                </Menu.Item>
             </Menu>
         </>
     )
