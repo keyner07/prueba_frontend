@@ -8,6 +8,7 @@ import NowPlaying from 'pages/NowPlaying';
 import DetailMovie from 'pages/DetailMovie';
 import FavMovies from 'pages/FavPage'
 import RatedMovies from 'pages/RatedMovies';
+import NotFound from 'pages/NotFound';
 
 export default function Routes() {
     return (
@@ -19,7 +20,7 @@ export default function Routes() {
                     <Route exact path='/favs' component={FavMovies} />
                     <Route exact path='/rate-movies' component={RatedMovies} />
                     <Route exact path='/movies/:id' component={DetailMovie} />
-                    {/* <Route path="*" component={<h1>Pagina no encontrada</h1>} /> */}
+                    <Route path="*" component={NotFound} />
                 </Switch>
             </UserContextProvider>
         </Router>
