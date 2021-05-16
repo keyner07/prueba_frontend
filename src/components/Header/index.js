@@ -14,9 +14,9 @@ export default function Header() {
                     </Link>
                 </Menu.Item>
                 <Menu.Item>
-                    <Link to='/popular'>
+                    <Link to='/favs'>
                         <HeartOutlined />
-                        Popular
+                        Favourites Movies
                     </Link>
                 </Menu.Item>
                 <Menu.Item>
