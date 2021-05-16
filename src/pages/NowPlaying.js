@@ -4,7 +4,7 @@ import Layout from 'components/Layout';
 import ListOfMovies from 'components/ListOfMovies';
 
 import getNowPlayingMovies from 'services/getNowPlaying';
-import compareMovies from 'utils/compareMovies';
+import compareMovies from 'utils/sortMovies';
 
 export default function Home() {
     const [loading, setLoading] = useState(false);

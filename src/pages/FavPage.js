@@ -7,11 +7,11 @@ import useUser from "hooks/useUser";
 
 export default function Home() {
     const { favs } = useUser();
-    console.log(favs);
+
     return (
         <>
             <Layout>
-                <div style={{ margin: "auto"}}>
+                <div style={{ margin: "auto", minHeight: "100vh"}}>
                     <ListOfMovies movies={favs} title="Favourites movies" />
                 </div>
             </Layout>
