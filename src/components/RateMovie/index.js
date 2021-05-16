@@ -10,12 +10,12 @@ export default function RateMovie({ id}) {
     const [disableButton, setDisabledButton] = useState(false);
     
     const handleVoteChange = value => {
-        setStars({ value})
+        setStars(value)
     }
 
     const onSubmit = ({ id }) => {
         setDisabledButton(true)
-        rateMovie({ id, sessionId, stars })
+        rateMovie({ id, sessionId, value: stars })
             .then(() => {
                 setDisabledButton(false)
                 setStars(null)
@@ -24,7 +24,7 @@ export default function RateMovie({ id}) {
 
     const handleSubmit = (evt) => {
         evt.preventDefault()
-        if(stars?.value>0){
+        if(stars>0){
             onSubmit({ id })
         }
       }
