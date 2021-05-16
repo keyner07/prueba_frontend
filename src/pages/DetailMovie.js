@@ -4,13 +4,11 @@ import Layout from 'components/Layout';
 import Detail from 'components/DetailMovie';
 
 import getMovieById from 'services/getMovieById';
-import getSimilarMovies from 'services/getMoviesSimilar';
 
 export default function DetailMovie() {
     const { id } = useParams();
     const [loading, setLoading] = useState(false);
     const [movie, setMovie] = useState([]);
-    const [moviesSimilar, setMoviesSimilar] = useState([]);
 
     useEffect(() => {
         setLoading(true);
@@ -18,17 +16,6 @@ export default function DetailMovie() {
         getMovieById({ id})
             .then(movie => {
                 setMovie(movie);
-                setLoading(false);
-            })
-            .catch(() => alert('Ocurrio algo'));
-    }, [id])
-
-    useEffect(() => {
-        setLoading(true);
-
-        getSimilarMovies({ id })
-            .then(movies => {
-                setMoviesSimilar(movies);
                 setLoading(false);
             })
             .catch(() => alert('Ocurrio algo'));
@@ -50,7 +37,6 @@ export default function DetailMovie() {
                     poster_path={movie.url}
                     description={movie.description}
                     genres={movie.genres}
-                    movies={moviesSimilar}
                 />
             </Layout>
         </>

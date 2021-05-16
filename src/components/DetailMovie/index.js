@@ -4,9 +4,9 @@ import './styles.css';
 
 import randomColor from 'utils/randomColors';
 import RateMovie from 'components/RateMovie';
-import ListOfMovies from 'components/ListOfMovies';
+import MoviesSimilar from 'components/MoviesSimilar';
 
-export default function DetailMovie({ title, release_date, vote_average, poster_path, description, genres=[], id, movies}) {
+export default function DetailMovie({ title, release_date, vote_average, poster_path, description, genres=[], id}) {
     
 
     return (
@@ -34,9 +34,7 @@ export default function DetailMovie({ title, release_date, vote_average, poster_
                     <hr />
                 </Col>
                 <Col>
-                    <div>
-                        <ListOfMovies movies={movies} />
-                    </div>
+                    <MoviesSimilar id={id} />
                 </Col>
             </Row> 
         </div>
