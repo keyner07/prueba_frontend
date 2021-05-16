@@ -1,7 +1,4 @@
-img {
-    margin-top: 4%;
-  }
-  
+
   h1, h3 {
     margin-top: 2%;
   }
@@ -30,7 +27,7 @@ img {
 
   .detail-movie {
       margin: 2% auto;
-      height: 100vh;
+      /* height: 100vh; */
   }
 
   .container-btn-similar {
