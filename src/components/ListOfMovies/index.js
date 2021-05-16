@@ -1,6 +1,6 @@
 import React from 'react';
 import MovieItem from 'components/MovieItem';
-import {Row, Col} from 'antd';
+import {Row, Col, Space} from 'antd';
 
 import './styles.css';
 
@@ -17,15 +17,16 @@ export default function ListOfMovies({ movies, title }){
                     movies.length > 0
                     ?
                     movies.map(movie => (
-                        <Col className="gutter-row" xs={20} sm={16} md={12} lg={8} xl={4} offset={1} key={movie.id}>
-                            <MovieItem
-                                id={movie.id}
-                                name={movie.title}
-                                date={movie.release_date}
-                                vote={movie.vote_average}
-                                image={movie.poster_path}
-                                />
-                        </Col>
+                            <Col className="gutter-row margin-botton" xs={20} sm={16} md={12} lg={8} xl={4} offset={1} key={movie.id}>
+                                <MovieItem
+                                    id={movie.id}
+                                    name={movie.title}
+                                    date={movie.release_date}
+                                    vote={movie.vote_average}
+                                    image={movie.poster_path}
+                                    rating={movie.rating}
+                                    />
+                            </Col>
                     ))
                     :
                     null
