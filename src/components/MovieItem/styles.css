@@ -16,3 +16,9 @@ img {
     margin: 10px auto;
     max-height: 500px;
   }
+  .Movie-buttons {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    z-index: 1;
+  }
