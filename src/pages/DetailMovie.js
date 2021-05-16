@@ -30,6 +30,7 @@ export default function DetailMovie() {
         <>
             <Layout>
                 <Detail
+                    id={movie.id}
                     title={movie.title}
                     release_date={movie.date}
                     vote_average={movie.vote/2}
