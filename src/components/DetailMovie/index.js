@@ -1,16 +1,17 @@
-import React, { useState} from 'react';
+import React from 'react';
+import { useHistory } from 'react-router-dom';
 import { Row, Col, Rate, Tag, Button } from 'antd'
 import './styles.css';
 
 import randomColor from 'utils/randomColors';
+import RateMovie from 'components/RateMovie';
 
-export default function DetailMovie({ title, release_date, vote_average, poster_path, description, genres=[]}) {
-    const [stars, setStars] = useState(null)
-    
-    const handleVoteChange = value => {
-        setStars({ value})
+export default function DetailMovie({ title, release_date, vote_average, poster_path, description, genres=[], id}) {
+    const history = useHistory();
+
+    const moviesSimilar = () => {
+        history.push(`/movies/${id}/similar`)
     }
-    
     return (
         <div className="detail-movie">
             <Row>
@@ -32,13 +33,12 @@ export default function DetailMovie({ title, release_date, vote_average, poster_
                     </div>
                     <Rate className='rate' disabled defaultValue={vote_average} />
                     <hr />
-                    <div>
-                        <span className='genreTitle'>
-                            <strong>Votacion</strong>
-                        </span>
-                        <Rate allowHalf defaultValue={stars} onChange={handleVoteChange} />
-                        <Button type="primary">Enviar</Button>
+                    <RateMovie id={id} />
+                    <hr />
+                    <div className="container-btn-similar">
+                        <Button onClick={moviesSimilar}>Buscar peliculas similares</Button>
                     </div>
+
                 </Col>
             </Row> 
         </div>
