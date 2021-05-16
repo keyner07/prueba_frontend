@@ -1,5 +1,6 @@
 import React, { useEffect, useState} from 'react';
 import { Spin } from 'antd';
+import {Helmet} from 'react-helmet';
 
 import Layout from 'components/Layout';
 import ListOfMovies from 'components/ListOfMovies';
@@ -23,6 +24,9 @@ export default function Home() {
 
     return (
         <>
+            <Helmet>
+                <title>Home || MoviesApp</title>
+            </Helmet>
             <Layout>
             {
                     loading

@@ -1,6 +1,9 @@
 import React, { useEffect, useState} from 'react';
 import { useParams } from 'react-router-dom';
 import { Spin } from 'antd';
+import {Helmet} from 'react-helmet';
+
+
 import Layout from 'components/Layout';
 import Detail from 'components/DetailMovie';
 
@@ -10,6 +13,8 @@ export default function DetailMovie() {
     const { id } = useParams();
     const [loading, setLoading] = useState(false);
     const [movie, setMovie] = useState([]);
+
+    const title = `${movie.title} || MoviesApp`
 
     useEffect(() => {
         setLoading(true);
@@ -24,6 +29,10 @@ export default function DetailMovie() {
 
     return (
         <>
+            <Helmet>
+                <title>{ title }</title>
+                <meta name="description" content={movie.title} />
+            </Helmet>
             <Layout>
             {
                     loading
