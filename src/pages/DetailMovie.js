@@ -16,7 +16,7 @@ export default function DetailMovie() {
     const [movie, setMovie] = useState([]);
     const [actors, setActors] = useState([]);
 
-    const title = `${movie.title} || MoviesApp`
+    const title = `${movie.name || 'Detail'} || MoviesApp`
 
     useEffect(() => {
         setLoading(true);
