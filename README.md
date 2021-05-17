@@ -13,7 +13,7 @@ Para correr el proyecto en local solo tiene que correr los siguientes comandos r
 **2. 🌍 Descargar las dependencias-** Para hacer esto simplemente tiene que correr el comando:
 ### <div align="center">`yarn install`</div>
 
-**2. 🌍 Levantar el proyecto-** Para hacer esto simplemente tiene que correr el comando:
+**2. ✅ Levantar el proyecto-** Para hacer esto simplemente tiene que correr el comando:
 ### <div align="center">`yarn start`</div>
 
 ### Con esto ya el archivo comenzara a correr.
