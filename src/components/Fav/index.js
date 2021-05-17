@@ -6,7 +6,7 @@ import useUser from "hooks/useUser";
 
 
 export default function Fav({ name, date, vote, image, id}) {
-  const { addFav, favs, deleteFav } = useUser();
+  const { addFav, favs=[], deleteFav } = useUser();
 
   const isFaved = favs.some((fav) => fav.id === id);
 

@@ -1,7 +1,7 @@
 
 export default function compare(prevMovie, actualMovie) {
-    const titlePrevMovie = prevMovie.title.toUpperCase();
-    const titleActualMovie = actualMovie.title.toUpperCase();
+    const titlePrevMovie = prevMovie.name.toUpperCase();
+    const titleActualMovie = actualMovie.name.toUpperCase();
 
     if(titlePrevMovie > titleActualMovie) {
         return 1;

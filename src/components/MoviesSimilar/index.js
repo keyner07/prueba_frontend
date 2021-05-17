@@ -16,12 +16,14 @@ export default function MoviesSimilar({ id }) {
     useEffect(() => {
         setLoading(true);
         
-        getSimilarMovies({ id })
-            .then(movies => {
-                setMovies(movies);
-                setLoading(false);
-            })
-            .catch(() => alert('Ocurrio algo'));
+        if(typeof id !== 'undefined') {
+            getSimilarMovies({ id })
+                .then(movies => {
+                    setMovies(movies);
+                    setLoading(false);
+                })
+                .catch(() => alert('Ocurrio algo'));
+        }
     }, [id])
 
     const label = moreMovies ? 'Less movies' : 'More movies';
@@ -29,7 +31,7 @@ export default function MoviesSimilar({ id }) {
     return (
         <>
             {
-                movies.length > 0 || loading
+                !loading
                 ?
                 <div >
                 {

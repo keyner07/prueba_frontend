@@ -28,10 +28,10 @@ export default function ListOfMovies({ movies, title, button }){
                             <Col className="gutter-row margin-botton" xs={20} sm={16} md={12} lg={8} xl={4} offset={1} key={movie.id}>
                                 <MovieItem
                                     id={movie.id}
-                                    name={movie.title}
-                                    date={movie.release_date}
-                                    vote={movie.vote_average}
-                                    image={movie.poster_path}
+                                    name={movie.name}
+                                    date={movie.date}
+                                    vote={movie.vote}
+                                    image={movie.image}
                                     rating={movie.rating}
                                     />
                             </Col>
@@ -41,7 +41,7 @@ export default function ListOfMovies({ movies, title, button }){
                 }
             </Row>
             {
-                    button
+                    button && movies.length >0
                     ?
                     <Row>
                         <Col offset={12}>

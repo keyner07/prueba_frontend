@@ -39,7 +39,7 @@ export default function DetailMovie() {
             })
             .catch(() => alert('Ocurrio algo'));
     }, [id])
-
+    
     return (
         <>
             <Helmet>
@@ -56,10 +56,10 @@ export default function DetailMovie() {
                     :
                     <Detail
                         id={movie.id}
-                        title={movie.title}
-                        release_date={movie.date}
-                        vote_average={movie.vote/2}
-                        poster_path={movie.url}
+                        name={movie.name}
+                        date={movie.date}
+                        vote={movie.vote/2}
+                        image={movie.image}
                         description={movie.description}
                         genres={movie.genres}
                         actors={actors}

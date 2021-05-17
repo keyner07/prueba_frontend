@@ -6,18 +6,18 @@ import randomColor from 'utils/randomColors';
 import RateMovie from 'components/RateMovie';
 import MoviesSimilar from 'components/MoviesSimilar';
 
-export default function DetailMovie({ title, release_date, vote_average, poster_path, description, genres=[], id, actors=[]}) {
+export default function DetailMovie({ name, date, vote, image, description, genres=[], id, actors=[], language}) {
     
 
     return (
-        <div className="detail-movie">
+        <div className="detail-movie" data-testid="div-detail-movie">
             <Row>
                 <Col span={8} offset={1}>
-                    <img alt={title} width='85%' src={`https://image.tmdb.org/t/p/w500${poster_path}`} />
+                    <img alt={name} width='85%' src={`https://image.tmdb.org/t/p/w500${image}`} />
                 </Col>
                 <Col span={12} offset={1}>
-                    <h1>{title}</h1>
-                    <h3>{release_date}</h3>
+                    <h1>{name}</h1>
+                    <h3>{date}</h3>
                     <hr />
                     <strong> Description: </strong>
                     <p>{description}</p>
@@ -28,7 +28,7 @@ export default function DetailMovie({ title, release_date, vote_average, poster_
                         </span>
                         {genres.map(genre => <Tag color={randomColor()} key={genre.id}>{genre.name}</Tag>)}
                     </div>
-                    <Rate className='rate' disabled defaultValue={vote_average} />
+                    <Rate className='rate' disabled defaultValue={vote} />
                     <hr />
                     <div className='genres'>
                         <span className='genreTitle'>

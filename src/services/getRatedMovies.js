@@ -4,8 +4,8 @@ const fromApiResponseToMovies = apiResponse => {
   const {results} = apiResponse;
   if (Array.isArray(results)) {
     const movies = results.map(movie => {
-      const {title, original_language, release_date, poster_path, vote_average, id, rating} = movie;
-      return { title, id, original_language, release_date, poster_path, vote_average, rating }
+      const {title: name, original_language: language, release_date: date, poster_path: image, vote_average: vote, id, rating} = movie;
+      return { name, id, language, date, image, vote, rating }
     })
     return movies
   }
