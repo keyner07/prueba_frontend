@@ -31,7 +31,7 @@ export default function RateMovie({ id}) {
 
     return (
         <div>
-            <span className='genreTitle'>
+            <span className='rateMovie'>
                 <strong>Votacion</strong>
             </span>
             <Space>

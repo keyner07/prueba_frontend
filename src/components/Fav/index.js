@@ -11,7 +11,7 @@ export default function Fav({ name, date, vote, image, id}) {
   const isFaved = favs.some((fav) => fav.id === id);
 
   const handleClick = () => {
-    addFav({ title: name, release_date: date, vote_average: vote, poster_path: image, id});
+    addFav({ name, date, vote, image, id});
   };
 
   const deleteClick =() => {
