@@ -7,8 +7,6 @@ import RateMovie from 'components/RateMovie';
 import MoviesSimilar from 'components/MoviesSimilar';
 
 export default function DetailMovie({ name, date, vote, image, description, genres=[], id, actors=[], language}) {
-    
-
     return (
         <div className="detail-movie" data-testid="div-detail-movie">
             <Row>

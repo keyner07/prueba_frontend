@@ -1,15 +1,15 @@
 import React, { useEffect, useState} from 'react';
 import { Spin } from 'antd';
 import { Helmet } from 'react-helmet';
+import { useSelector } from 'react-redux';
 
 import Layout from 'components/Layout';
 import ListOfMovies from 'components/ListOfMovies';
 
 import getTopRatedMovies from 'services/getRatedMovies';
-import useUser from "hooks/useUser";
 
 export default function Home() {
-    const { sessionId } = useUser();
+    const sessionId = useSelector(state => state.user);
     const [loading, setLoading] = useState(false);
     const [moviesRated, setMoviesRated] = useState([]);
 

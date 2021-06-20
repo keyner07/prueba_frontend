@@ -1,21 +1,21 @@
 import React from "react";
 import { Button } from 'antd';
 import { StarOutlined, CloseOutlined } from '@ant-design/icons';
-
-import useUser from "hooks/useUser";
+import { useSelector } from 'react-redux';
+import { addFavourites, deleteFavourites} from '../../store/dispatch';
 
 
 export default function Fav({ name, date, vote, image, id}) {
-  const { addFav, favs=[], deleteFav } = useUser();
+  const favs = useSelector(state => state.movies);
 
   const isFaved = favs.some((fav) => fav.id === id);
 
   const handleClick = () => {
-    addFav({ name, date, vote, image, id});
+    addFavourites({ name, date, vote, image, id});
   };
 
   const deleteClick =() => {
-    deleteFav(id);
+    deleteFavourites({id})
   }
 
   return (

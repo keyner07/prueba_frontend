@@ -4,10 +4,10 @@ import {Helmet} from 'react-helmet';
 import Layout from 'components/Layout';
 import ListOfMovies from 'components/ListOfMovies';
 
-import useUser from "hooks/useUser";
+import { useSelector } from 'react-redux';
 
 export default function Home() {
-    const { favs } = useUser();
+    const favs = useSelector(state => state.movies)
 
     return (
         <>

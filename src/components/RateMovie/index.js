@@ -2,10 +2,10 @@ import React, { useState} from 'react';
 import { Rate, Button, Space } from 'antd';
 
 import rateMovie from 'services/rateMovie';
-import useUser from 'hooks/useUser';
+import { useSelector } from 'react-redux';
 
 export default function RateMovie({ id}) {
-    const {sessionId} = useUser();
+    const sessionId = useSelector(state => state.user)
     const [stars, setStars] = useState(null)
     const [disableButton, setDisabledButton] = useState(false);
     
